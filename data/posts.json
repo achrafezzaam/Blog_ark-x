@@ -1,0 +1,165 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "First Post",
+      "content": "This is the content of the first post."
+    },
+    {
+      "id": 2,
+      "title": "Second Post",
+      "content": "This is the content of the second post."
+    },
+    {
+      "id": 3,
+      "title": "welcome",
+      "content": "Welcome to this blog. I'm currently working on improving the features of the website. Thank you for your comprehension"
+    },
+    {
+      "id": 4,
+      "title": "Fourth Post",
+      "content": "This is the content of the fourth post."
+    },
+    {
+      "id": 5,
+      "title": "Fifth Post",
+      "content": "This is the content of the fifth post."
+    },
+    {
+      "id": 6,
+      "title": "Sixth Post",
+      "content": "This is the content of the sixth post."
+    },
+    {
+      "id": 7,
+      "title": "Seventh Post",
+      "content": "This is the content of the seventh post."
+    },
+    {
+      "id": 8,
+      "title": "eighth Post",
+      "content": "This is the content of the eighth post."
+    },
+    {
+      "id": 9,
+      "title": "nineth Post",
+      "content": "This is the content of the nineth post."
+    },
+    {
+      "id": 10,
+      "title": "tenth Post",
+      "content": "This is the content of the tenth post."
+    },
+    {
+      "id": "1f117284-a6d6-4f88-b002-60c73dee7e68",
+      "title": "A Guide to Modern JavaScript",
+      "content": "JavaScript has evolved significantly. This guide covers ES6+ features...",
+      "author": "John Smith",
+      "tags": [
+        "programming",
+        "javascript",
+        "webdev"
+      ],
+      "createdAt": "2025-08-19T07:56:25.136Z",
+      "updatedAt": "2025-08-19T07:56:25.136Z"
+    },
+    {
+      "id": "556295dc-6f6b-4347-8f94-8f709bae8f54",
+      "title": "A Guide to Modern JavaScript",
+      "content": "JavaScript has evolved significantly. This guide covers ES6+ features...",
+      "author": "John Smith",
+      "tags": [
+        "programming",
+        "javascript",
+        "webdev"
+      ],
+      "createdAt": "2025-08-19T08:07:23.938Z",
+      "updatedAt": "2025-08-19T08:07:23.938Z"
+    },
+    {
+      "id": "381c6d95-1c99-4533-8f73-32b966291f25",
+      "title": "A Guide to Modern JavaScript",
+      "content": "JavaScript has evolved significantly. This guide covers ES6+ features...",
+      "author": "John Smith",
+      "tags": [
+        "programming",
+        "javascript",
+        "webdev"
+      ],
+      "createdAt": "2025-08-19T08:07:46.714Z",
+      "updatedAt": "2025-08-19T08:07:46.714Z"
+    },
+    {
+      "id": "752bac82-e7b4-4455-b117-a6f685adbbfc",
+      "title": "Exploring the Alps",
+      "content": "A beautiful journey...",
+      "author": "Jane Doe",
+      "tags": [],
+      "createdAt": "2025-08-19T08:18:09.383Z",
+      "updatedAt": "2025-08-19T08:18:09.383Z"
+    },
+    {
+      "id": "7bbb0c1c-920a-46e8-bc40-c058a21211cb",
+      "title": "A Guide to Modern JavaScript",
+      "content": "ES6+ features...",
+      "author": "John Smith",
+      "tags": [],
+      "createdAt": "2025-08-19T08:18:09.397Z",
+      "updatedAt": "2025-08-19T08:18:09.397Z"
+    },
+    {
+      "id": "e69b6119-eaca-4025-9996-f1679866df30",
+      "title": "Exploring the Alps",
+      "content": "A beautiful journey...",
+      "author": "Jane Doe",
+      "tags": [],
+      "createdAt": "2025-08-19T08:19:23.587Z",
+      "updatedAt": "2025-08-19T08:19:23.587Z"
+    },
+    {
+      "id": "33428e5e-b14a-4eea-8a6c-f8ab5cb91d3e",
+      "title": "A Guide to Modern JavaScript",
+      "content": "ES6+ features...",
+      "author": "John Smith",
+      "tags": [],
+      "createdAt": "2025-08-19T08:19:23.601Z",
+      "updatedAt": "2025-08-19T08:19:23.601Z"
+    },
+    {
+      "id": "aec03f78-1ff4-4737-a824-864e82e0afc0",
+      "title": "Exploring the Alps",
+      "content": "A beautiful journey...",
+      "author": "Jane Doe",
+      "tags": [],
+      "createdAt": "2025-08-19T08:21:58.931Z",
+      "updatedAt": "2025-08-19T08:21:58.931Z"
+    },
+    {
+      "id": "e49bdde0-9791-43fa-bc9a-bd94a7e12eec",
+      "title": "A Guide to Modern JavaScript",
+      "content": "ES6+ features...",
+      "author": "John Smith",
+      "tags": [],
+      "createdAt": "2025-08-19T08:21:58.946Z",
+      "updatedAt": "2025-08-19T08:21:58.946Z"
+    },
+    {
+      "id": "3a74f577-9c5f-4f78-9002-aaf2c53438d3",
+      "title": "Exploring the Alps",
+      "content": "A beautiful journey...",
+      "author": "Jane Doe",
+      "tags": [],
+      "createdAt": "2025-08-19T08:25:16.520Z",
+      "updatedAt": "2025-08-19T08:25:16.520Z"
+    },
+    {
+      "id": "2daf3514-a9aa-4c51-bdbe-9d5a7f7f062c",
+      "title": "A Guide to Modern JavaScript",
+      "content": "ES6+ features...",
+      "author": "John Smith",
+      "tags": [],
+      "createdAt": "2025-08-19T08:25:16.535Z",
+      "updatedAt": "2025-08-19T08:25:16.535Z"
+    }
+  ]
+}
