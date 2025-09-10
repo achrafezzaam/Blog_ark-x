@@ -1,15 +1,17 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ props }) => {
     return (
         <header>
-            <h1>My Blog App</h1>
+            <h1>My Blog App - {props[0].title}</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Link 1</a></li>
-                    <li><a href="#">Link 2</a></li>
-                    <li><a href="#">Link 3</a></li>
+                    {props[0].links.map((item, index) => {
+                        return <li key={index}><a href={item.url}>{item.name}</a></li>
+                    })}
+                    {}
                 </ul>
+                {props.isLoggedIn ? <button>Logout</button> : <button>Login</button>}
             </nav>
         </header>
     );
