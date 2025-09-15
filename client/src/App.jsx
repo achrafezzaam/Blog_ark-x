@@ -48,7 +48,7 @@ function App() {
   return ( 
     <main>
       <Header props={header_info} />
-      <MainContent posts={posts} postColumns={postColumns} />
+      <MainContent postsList={posts} postColumns={postColumns} />
       <Footer />
     </main>
   )

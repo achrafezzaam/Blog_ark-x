@@ -11,7 +11,7 @@ const Header = ({ props }) => {
                     })}
                     {}
                 </ul>
-                {props.isLoggedIn ? <button>Logout</button> : <button>Login</button>}
+                <button>{props.isLoggedIn ? 'Logout' : 'Login'}</button>
             </nav>
         </header>
     );
