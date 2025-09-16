@@ -1,24 +1,56 @@
+import LoginForm from './components/LoginForm';
+import SignUpForm from './components/SignUpForm';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import './App.css';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  // Check for existing token on app load
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    const userData = localStorage.getItem('userData');
+    
+    if (token && userData) {
+      setIsLoggedIn(true);
+      setUser(JSON.parse(userData));
+    }
+  }, []);
+
+  const handleLogin = (userData, token) => {
+    localStorage.setItem('authToken', token);
+    localStorage.setItem('userData', JSON.stringify(userData));
+    setIsLoggedIn(true);
+    setUser(userData);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userData');
+    setIsLoggedIn(false);
+    setUser(null);
+  };
+
   const header_info = [
     {
-      title: "Article title test",
-      isLoggedIn: false,
+      title: "My Blog App",
+      isLoggedIn: isLoggedIn,
+      user: user,
       links: [
         {
-          name: "Link 1",
+          name: "Home",
           url: "#"
         },
         {
-          name: "Link 2",
+          name: "About",
           url: "#"
         },
         {
-          name: "Link 3",
+          name: "Contact",
           url: "#"
         }
       ]
@@ -47,7 +79,24 @@ function App() {
 
   return ( 
     <main>
-      <Header props={header_info} />
+      <Header props={header_info} onLogout={handleLogout} />
+      
+      {/* Conditional rendering: Show forms only if not logged in */}
+      {!isLoggedIn && (
+        <div className="auth-forms">
+          <LoginForm onLogin={handleLogin} />
+          <SignUpForm onLogin={handleLogin} />
+        </div>
+      )}
+      
+      {/* Show welcome message if logged in */}
+      {isLoggedIn && user && (
+        <div className="welcome-section">
+          <h2>Welcome back, {user.email}!</h2>
+          <p>You are successfully logged in.</p>
+        </div>
+      )}
+      
       <MainContent postsList={posts} postColumns={postColumns} />
       <Footer />
     </main>

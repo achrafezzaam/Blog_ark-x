@@ -124,3 +124,133 @@ footer a {
 footer a:hover {
     color: #E3AB57;
 }
+/* Authentication Styles */
+.auth-forms {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.login-form, .signup-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+}
+
+.login-form h2, .signup-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.login-form div, .signup-form div {
+    margin-bottom: 15px;
+}
+
+.login-form input, .signup-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login-form input:focus, .signup-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.login-form button, .signup-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form button:hover, .signup-form button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.login-form button:disabled, .signup-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #e8f5e8;
+    border-radius: 8px;
+    margin: 20px 40px;
+}
+
+.welcome-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    color: #666;
+}
+
+/* Header Auth Section */
+.auth-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info span {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.logout-btn {
+    min-width: 100px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.auth-buttons span {
+    color: var(--primary-color);
+    font-style: italic;
+}
