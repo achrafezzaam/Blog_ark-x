@@ -77,8 +77,79 @@ const postUpdateSchema = {
     tags: { isArray: true, type: 'string', maxItems: 20 }
 };
 
+const userRegistrationSchema = {
+    email: { 
+        required: true, 
+        type: 'string', 
+        minLength: 5, 
+        maxLength: 100,
+        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    },
+    password: { 
+        required: true, 
+        type: 'string', 
+        minLength: 8, 
+        maxLength: 128 
+    },
+    role: { 
+        type: 'string',
+        enum: ['user', 'admin']
+    }
+};
+
+const userLoginSchema = {
+    email: { 
+        required: true, 
+        type: 'string', 
+        minLength: 5, 
+        maxLength: 100 
+    },
+    password: { 
+        required: true, 
+        type: 'string', 
+        minLength: 1 
+    }
+};
+
 const validatePostCreate = (body) => validate(postCreateSchema, body);
 const validatePostUpdate = (body) => validate(postUpdateSchema, body);
+const validateUserRegistration = (body) => {
+    const result = validate(userRegistrationSchema, body);
+    
+    // Additional email pattern validation
+    if (result.value && result.value.email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(result.value.email)) {
+            return {
+                value: undefined,
+                error: { 
+                    statusCode: 400, 
+                    message: 'Validation failed', 
+                    details: { email: 'Invalid email format' } 
+                }
+            };
+        }
+    }
+    
+    // Role validation
+    if (result.value && result.value.role && !['user', 'admin'].includes(result.value.role)) {
+        return {
+            value: undefined,
+            error: { 
+                statusCode: 400, 
+                message: 'Validation failed', 
+                details: { role: 'Role must be either "user" or "admin"' } 
+            }
+        };
+    }
+    
+    return result;
+};
+const validateUserLogin = (body) => validate(userLoginSchema, body);
 
-
-module.exports = { validatePostCreate, validatePostUpdate };
+module.exports = { 
+    validatePostCreate, 
+    validatePostUpdate, 
+    validateUserRegistration, 
+    validateUserLogin 
+};

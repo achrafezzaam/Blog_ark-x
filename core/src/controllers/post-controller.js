@@ -53,7 +53,14 @@ const createPost = async (req, res, next) => {
             return next(error);
         }
         
-        const newPost = await postModel.create(value);
+        // Add user information to the post
+        const postData = {
+            ...value,
+            createdBy: req.user.id,
+            createdByEmail: req.user.email
+        };
+        
+        const newPost = await postModel.create(postData);
         res.status(201).json({ data: newPost, error: null });
     } catch (error) {
         next(error);
@@ -67,7 +74,30 @@ const updatePost = async (req, res, next) => {
             return next(error);
         }
 
-        const updatedPost = await postModel.update(req.params.id, value);
+        // Check if user can update this post (admin can update any, user can update their own)
+        if (req.user.role !== 'admin') {
+            const existingPost = await postModel.findById(req.params.id);
+            if (!existingPost) {
+                const error = new Error('Post not found');
+                error.statusCode = 404;
+                return next(error);
+            }
+            
+            if (existingPost.createdBy !== req.user.id) {
+                const error = new Error('You can only update your own posts');
+                error.statusCode = 403;
+                return next(error);
+            }
+        }
+
+        // Add update information
+        const updateData = {
+            ...value,
+            updatedBy: req.user.id,
+            updatedByEmail: req.user.email
+        };
+
+        const updatedPost = await postModel.update(req.params.id, updateData);
         if (!updatedPost) {
             const error = new Error('Post not found');
             error.statusCode = 404;
