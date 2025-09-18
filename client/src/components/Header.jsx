@@ -1,29 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
-const Header = ({ props, onLogout }) => {
-    const headerData = props[0];
+const Header = () => {
+    const { isLoggedIn, user, logout } = useAuth();
 
     return (
         <header>
-            <h1>{headerData.title}</h1>
+            <h1>My Blog App</h1>
             <nav>
                 <ul>
-                    {headerData.links.map((item, index) => {
-                        return <li key={index}><a href={item.url}>{item.name}</a></li>
-                    })}
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                    {isLoggedIn && (
+                        <li><Link to="/new-post">New Post</Link></li>
+                    )}
                 </ul>
 
                 <div className="auth-section">
-                    {headerData.isLoggedIn ? (
+                    {isLoggedIn ? (
                         <div className="user-info">
-                            <span>Hello, {headerData.user?.email}</span>
-                            <button onClick={onLogout} className="logout-btn">
+                            <span>Hello, {user?.email}</span>
+                            <button onClick={logout} className="logout-btn">
                                 Logout
                             </button>
                         </div>
                     ) : (
                         <div className="auth-buttons">
-                            <span>Please log in to continue</span>
+                            <Link to="/login" className="auth-link">Login</Link>
+                            <Link to="/signup" className="auth-link">Sign Up</Link>
                         </div>
                     )}
                 </div>
